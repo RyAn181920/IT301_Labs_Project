@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab11: Mouse Events</title>
+    <style>
+        #ClickMe{
+            background-color: lightpink;
+            font-size: 2.2rem;
+            padding: 2px;
+        }
+        #ClickMe:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id ="ClickMe">Click Me!</div>
+    <div></div>
+    <script>
+        const ClickMe = document.getElementById('ClickMe');
+        ClickMe.addEventListener('pointerleave', function(){
+            ClickMe.textContent = "I see you! 👀"
+            ClickMe.style.backgroundColor = 'light blue'
+            console.log(CLickMe)
+        });
+        ClickMe.addEventListener('click', function(){
+            ClickMe.textContent = "Ouch!🤕"
+            ClickMe.style.backgroundColor = 'red'
+            console.log(CLickMe)
+        });
+        ClickMe.addEventListener('mouseover', function(){
+            ClickMe.textContent = "Do not click!😠"
+            ClickMe.style.backgroundColor = 'yellow'
+            console.log(CLickMe)
+        });
+        ClickMe.addEventListener('mouseleave', function(){
+            ClickMe.textContent = "Phew! 😌"
+            ClickMe.style.backgroundColor = 'lightgreen'
+            console.log(CLickMe)
+        });
+        ClickMe.addEventListener('dblclick', function(){
+            ClickMe.textContent = "Double trouble! 🤩"
+            ClickMe.style.backgroundColor = 'pink'
+            console.log(CLickMe)
+        });
+    </script>
+</body>
+</html>
