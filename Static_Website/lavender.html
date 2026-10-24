@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Oak Lavender Farm</title>
+    <!--Link lavender.css-->
+    <link rel="stylesheet" href="lavender.css">
+    <!--Import font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1> White Oak Lavender Farm</h1>
+    </header>
+    <nav>
+        <a href="index.html">Return to Homepage</a>
+    </nav>
+    <main>
+        <h2>Discover White Oak Lavender Farm!</h2>
+        <p id="lavenderp">White Oak Lavender Farm is known for its beautiful lavender fields, 
+            relaxing atmosphere, and variety of lavender-based products. 
+            It's a popular destination for visitors who enjoy nature, photography,
+            shopping, and outdoor activities.
+        </p>
+
+        <h2>Why visit White Oak Lavender Farm?</h2>
+        <ul>
+            <li>Explore the beautiful lavender gardens</li>
+            <li>Shop for lavender-based products, like soap, hand cream, and lavender sugar</li>
+            <li>Visit the Purple WOLF Vineyard</li>
+            <li>Enjoy outdoor activities</li>
+        </ul>
+        <p>Have questions? Ask WOLF here: <input type="text" id="answer" placeholder="Enter here"></p>
+        <button onclick="response()">Submit</button>
+        <p id="response"> </p>
+    </main>
+    <script>
+        function response(){
+            let answer = document.getElementById("answer").value;
+            document.getElementById("response").textContent = 
+            "Your question: " + answer + " has been recorded!";
+        }
+    </script>
+    <footer>
+        <p>Harrisonburg Attractions</p>
+    </footer>
+</body>
+</html>
