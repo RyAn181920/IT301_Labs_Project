@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Info</h1>
+    <script>
+        const site = "https://randomuser.me/api/";
+
+        let Info = document.createElement('div');
+        Info.id = 'Info';
+        document.body.appendChild(Info);
+
+        let bttn = document.createElement('button');
+        bttn.type = "button";
+        bttn.textContent = 'Generate Profile';
+        document.body.appendChild(bttn);
+        const getInfo = async () => {
+            try {
+                let result = await fetch(site);
+                result = await result.json();
+                let user = result.results[0];
+                Info.innerHTML = '';
+                let picture = document.createElement('img');
+                picture.src = user.picture.large;
+                let name = document.createElement('h2');
+                name.textContent = user.name.first + ' ' + user.name.last;
+                let email = document.createElement('p');
+                email.textContent = user.email;
+                let phone = document.createElement('p');
+                phone.textContent = user.phone;
+                Info.appendChild(picture);
+                Info.appendChild(name);
+                Info.appendChild(email);
+                Info.appendChild(phone);
+            } catch (reason) {
+                console.log(reason);
+                Info.textContent = 'Error';
+            }
+        };
+        bttn.addEventListener('click', getInfo);
+        getInfo();
+
+    </script>
+</body>
+</html>
